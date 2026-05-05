@@ -1,85 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pabitra | Portfolio</title>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; text-align: center; }
-        header { background: #0366d6; color: white; padding: 40px; }
-        
-        /* Switch/Tab Styling */
-        .tab-container { margin: 20px 0; }
-        .tab-btn {
-            padding: 12px 25px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            background: #ddd;
-            margin: 0 5px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .tab-btn.active { background: #0366d6; color: white; }
-        
-        /* Content Sections */
-        .content-section { 
-            display: none; 
-            max-width: 800px; 
-            margin: 20px auto; 
-            background: white; 
-            padding: 20px; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .content-section.active { display: block; }
-        
-        .media-box { width: 100%; border-radius: 8px; margin-top: 15px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e') no-repeat center/cover;
+  position: relative;
+  color: white;
+}
+
+/* Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* NAVBAR */
+nav {
+  position: absolute;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+nav h2 {
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav ul li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav ul li:hover {
+  color: #3B82F6;
+}
+
+/* CONTENT */
+.content {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+}
+
+/* SMALL TEXT */
+.content h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* BIG NAME */
+.content h1 {
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease forwards 0.5s;
+}
+
+/* SUBTEXT */
+.content p {
+  margin-top: 20px;
+  font-size: 18px;
+  max-width: 400px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 1s;
+}
+
+/* BUTTON */
+.btn {
+  margin-top: 30px;
+  padding: 12px 25px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #3B82F6;
+  border-color: #3B82F6;
+}
+
+/* FLOATING IMAGE */
+.hero-img {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  height: 80%;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ANIMATIONS */
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+  .content h1 {
+    font-size: 50px;
+  }
+  .hero-img {
+    display: none;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Pabitra</h1>
-    <p>BCA Student & Cinematographer</p>
-</header>
+<section class="hero">
 
-<div class="tab-container">
-    <button class="tab-btn active" onclick="openTab('academic')">Academic</button>
-    <button class="tab-btn" onclick="openTab('cinematography')">Cinematgraphy</button>
-</div>
+  <!-- NAVBAR -->
+  <nav>
+    <h2>Pavitra</h2>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Projects</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
 
-<!-- ACADEMIC Section -->
-<div id="academic" class="content-section active">
-    <h2>Academic Records</h2>
-    <p>Official Marksheets and Technical Projects (Python/DBMS).</p>
-    <!-- Replace 'marksheet.jpg' with your actual uploaded file name -->
-    <img src="marksheet.jpg" alt="BCA Marksheet" class="media-box">
-</div>
+  <!-- CONTENT -->
+  <div class="content">
+    <h4>Hi There!</h4>
+    <h1>Pavitra<br>Samal</h1>
+    <p>Aspiring Software Developer building modern and user-friendly applications.</p>
+    <button class="btn">About Me</button>
+  </div>
 
-<!-- Cinematography Section -->
-<div id="cinematography" class="content-section">
-    <h2>Cinematic Works</h2>
-    <p>Short films and heritage site captures from Odisha.</p>
-    <!-- For YouTube videos, use this format: -->
-    <iframe class="media-box" height="400" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-</div>
+  <!-- IMAGE -->
+  <img src="https://i.ibb.co/4pDNDk1/avatar.png" class="hero-img">
 
-<script>
-    function openTab(tabId) {
-        // Hide all sections
-        document.querySelectorAll('.content-section').forEach(section => {
-            section.classList.remove('active');
-        });
-        // Remove active class from buttons
-        document.querySelectorAll('.tab-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-        // Show current tab
-        document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
-    }
-</script>
+</section>
 
 </body>
 </html>
