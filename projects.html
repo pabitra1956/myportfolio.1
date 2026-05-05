@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pabitra | My Projects</title>
+    <title>Pabitra | Vertical Project List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
+            /* Reference to your background image file verbatim */
             background-image: url('image_2.png');
             background-size: cover;
             background-attachment: fixed;
@@ -16,25 +17,28 @@
         }
 
         .overlay {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.85);
             min-height: 100vh;
             padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h1 { text-align: center; margin-bottom: 40px; color: #5c6bc0; }
 
-        /* The Horizontal Container */
-        .project-row {
+        /* Changed to Vertical Column */
+        .project-column {
             display: flex;
-            flex-wrap: nowrap; /* Forces them to stay horizontal */
-            overflow-x: auto;   /* Adds a scrollbar if they don't fit */
-            gap: 15px;
-            padding: 20px 10px;
+            flex-direction: column; /* This stacks boxes vertically */
+            gap: 20px;
+            width: 100%;
+            max-width: 600px; /* Limits width so boxes don't stretch too wide */
         }
 
         .project-box {
-            flex: 0 0 200px; /* Each box is 200px wide */
-            height: 150px;
+            width: 100%;
+            height: 100px;
             background: white;
             border-radius: 12px;
             display: flex;
@@ -47,30 +51,29 @@
             text-align: center;
         }
 
-        .project-box:hover { transform: translateY(-10px); background: #5c6bc0; color: white; }
+        .project-box:hover { 
+            transform: scale(1.02); 
+            background: #5c6bc0; 
+            color: white; 
+        }
 
         .back-btn {
             display: block;
             width: fit-content;
-            margin: 30px auto;
+            margin-top: 40px;
             padding: 10px 25px;
             background: #2c3e50;
             color: white;
             text-decoration: none;
             border-radius: 5px;
         }
-
-        /* Mobile responsive: allow wrapping on small screens */
-        @media (max-width: 768px) {
-            .project-row { flex-wrap: wrap; justify-content: center; }
-        }
     </style>
 </head>
 <body>
     <div class="overlay">
-        <h1>My Project Gallery</h1>
+        <h1>My Project List</h1>
         
-        <div class="project-row">
+        <div class="project-column">
             <div class="project-box">PROJECT 1</div>
             <div class="project-box">PROJECT 2</div>
             <div class="project-box">PROJECT 3</div>
