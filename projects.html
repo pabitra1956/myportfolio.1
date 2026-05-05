@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pabitra | My Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-image: url('image_2.png');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #2c3e50;
+        }
+
+        .overlay {
+            background: rgba(255, 255, 255, 0.8);
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        h1 { text-align: center; margin-bottom: 40px; color: #5c6bc0; }
+
+        /* The Horizontal Container */
+        .project-row {
+            display: flex;
+            flex-wrap: nowrap; /* Forces them to stay horizontal */
+            overflow-x: auto;   /* Adds a scrollbar if they don't fit */
+            gap: 15px;
+            padding: 20px 10px;
+        }
+
+        .project-box {
+            flex: 0 0 200px; /* Each box is 200px wide */
+            height: 150px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #5c6bc0;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .project-box:hover { transform: translateY(-10px); background: #5c6bc0; color: white; }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            padding: 10px 25px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Mobile responsive: allow wrapping on small screens */
+        @media (max-width: 768px) {
+            .project-row { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>My Project Gallery</h1>
+        
+        <div class="project-row">
+            <div class="project-box">PROJECT 1</div>
+            <div class="project-box">PROJECT 2</div>
+            <div class="project-box">PROJECT 3</div>
+            <div class="project-box">PROJECT 4</div>
+            <div class="project-box">PROJECT 5</div>
+            <div class="project-box">PROJECT 6</div>
+            <div class="project-box">PROJECT 7</div>
+            <div class="project-box">PROJECT 8</div>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+</body>
+</html>
