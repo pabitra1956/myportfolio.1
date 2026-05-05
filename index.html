@@ -84,12 +84,24 @@
 
         .container { max-width: 1000px; margin: 80px auto; padding: 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card {
+       .card {
             background: rgba(255, 255, 255, 0.9); 
             backdrop-filter: blur(8px);
             padding: 30px;
             border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-decoration: none; /* Removes underline from text */
+            color: inherit; /* Keeps text color the same */
+            display: block; /* Makes the whole card clickable */
+            cursor: pointer;
+        }
+
+        .card:hover { 
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 1); /* Brightens on hover */
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
         }
 
         footer { background: rgba(15, 23, 42, 0.95); color: white; text-align: center; padding: 60px 0; margin-top: 80px; }
@@ -121,18 +133,25 @@
             <button class="back-btn" onclick="toggleAbout(false)">Back to Home</button>
         </div>
     </header>
-
+<!--my work -->
     <div class="container" id="projects">
         <h2 style="text-align: center; margin-bottom: 50px; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">My Works</h2>
         <div class="grid">
-            <div class="card">
+            
+            <!-- Project 1 Link -->
+            <a href="https://github.com/pabitra1956/myportfolio.1" class="card">
                 <h3>Portfolio Website</h3>
                 <p>A responsive portfolio featuring interactive elements and GitHub Pages hosting.</p>
-            </div>
-            <div class="card">
+                <span style="color: var(--primary); font-weight: bold;">Open Project →</span>
+            </a>
+
+            <!-- Project 2 Link -->
+            <a href="#" class="card">
                 <h3>Future Project</h3>
                 <p>Stay tuned for more updates on my upcoming web applications!</p>
-            </div>
+                <span style="color: var(--primary); font-weight: bold;">Coming Soon →</span>
+            </a>
+
         </div>
     </div>
 
