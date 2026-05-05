@@ -1,192 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Developer & Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
 
-body {
-  overflow-x: hidden;
-}
+        .logo { font-weight: bold; font-size: 1.5rem; color: var(--primary); }
+        
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 500; }
 
-/* HERO SECTION */
-.hero {
-  height: 100vh;
-  background: url ("https://wallpapers.com/images/hd/solid-black-4k-light-bulb-vrd09dy2rfcov0m9.jpg") no-repeat center/cover;
-  position: relative;
-  color: white;
-}
+        /* Hero Section */
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+            padding: 0 20px;
+        }
 
-/* Overlay */
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-}
+        /* Projects Grid */
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
 
-/* NAVBAR */
-nav {
-  position: absolute;
-  width: 100%;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  z-index: 2;
-}
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
 
-nav h2 {
-  font-weight: 700;
-}
+        .card:hover { transform: translateY(-5px); }
 
-nav ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-}
+        /* Contact Section */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
 
-nav ul li {
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-nav ul li:hover {
-  color: #3B82F6;
-}
-
-/* CONTENT */
-.content {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 8%;
-  transform: translateY(-50%);
-}
-
-/* SMALL TEXT */
-.content h4 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-}
-
-/* BIG NAME */
-.content h1 {
-  font-size: 100px;
-  font-weight: 700;
-  line-height: 1;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: slideUp 1s ease forwards 0.5s;
-}
-
-/* SUBTEXT */
-.content p {
-  margin-top: 20px;
-  font-size: 18px;
-  max-width: 400px;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards 1s;
-}
-
-/* BUTTON */
-.btn {
-  margin-top: 30px;
-  padding: 12px 25px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #3B82F6;
-  border-color: #3B82F6;
-}
-
-/* FLOATING IMAGE */
-.hero-img {
-  position: absolute;
-  right: 10%;
-  bottom: 0;
-  height: 80%;
-  z-index: 2;
-  animation: float 4s ease-in-out infinite;
-}
-
-/* ANIMATIONS */
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-
-/* RESPONSIVE */
-@media(max-width: 768px){
-  .content h1 {
-    font-size: 50px;
-  }
-  .hero-img {
-    display: none;
-  }
-}
-</style>
+        .social-links a { color: white; margin: 0 10px; font-size: 1.5rem; }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
+    <nav>
+        <div class="logo">DevName.</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h2>Pavitra</h2>
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Projects</li>
-      <li>Contact</li>
-    </ul>
-  </nav>
+    <header id="about">
+        <h1>Hi, I'm [Your Name]</h1>
+        <p>I build elegant solutions for the modern web.</p>
+    </header>
 
-  <!-- CONTENT -->
-  <div class="content">
-    <h4>Hi There!</h4>
-    <h1>Pavitra<br>Samal</h1>
-    <p>Aspiring Software Developer building modern and user-friendly applications.</p>
-    <button class="btn">About Me</button>
-  </div>
+    <div class="container" id="projects">
+        <h2 style="text-align: center;">My Projects</h2>
+        <div class="grid">
+            <!-- Project 1 -->
+            <div class="card">
+                <h3>Project One</h3>
+                <p>A brief description of this cool app. Built with HTML, CSS, and pure imagination.</p>
+                <a href="#">View Code →</a>
+            </div>
+            <!-- Project 2 -->
+            <div class="card">
+                <h3>Project Two</h3>
+                <p>An amazing data tool that solves a very specific problem efficiently.</p>
+                <a href="#">View Code →</a>
+            </div>
+            <!-- Project 3 -->
+            <div class="card">
+                <h3>Project Three</h3>
+                <p>Interactive web experience using JavaScript and external APIs.</p>
+                <a href="#">View Code →</a>
+            </div>
+        </div>
+    </div>
 
-  <!-- IMAGE -->
-  <img src="1690949730706[110] (2).jpeg">
-
-</section>
+    <footer id="contact">
+        <h2>Let's Connect</h2>
+        <div class="social-links">
+            <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:email@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
