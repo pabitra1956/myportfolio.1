@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Pabitra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 { margin-bottom: 10px; color: #5c6bc0; }
+        .info-item {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .info-item a { color: white; text-decoration: none; transition: 0.3s; }
+        .info-item a:hover { color: #5c6bc0; }
+        .back-btn {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #5c6bc0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-card">
+        <h1>Pabitra</h1>
+        <p>Let's work together!</p>
+        <hr style="opacity: 0.2; margin: 20px 0;">
+
+        <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>pabitra@email.com</span>
+        </div>
+
+        <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <span>+91 1234567890</span>
+        </div>
+
+        <div class="info-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn Profile</a>
+        </div>
+
+        <div class="info-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/pabitra1956" target="_blank">GitHub Profile</a>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+</body>
+</html>
