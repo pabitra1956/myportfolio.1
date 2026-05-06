@@ -55,30 +55,37 @@
             transition: all 0.5s ease;
         }
 
-        header h1 { font-size: 4.5rem; margin: 0; letter-spacing: -2px; }
-
-        /* NEW: This creates the side-by-side look */
+        /* UPDATED: Black background pill for photo and name */
         .profile-header {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 20px; /* Space between photo and name */
-            margin-bottom: 10px;
+            gap: 20px;
+            background-color: #000000; /* Solid Black */
+            padding: 15px 35px;
+            border-radius: 60px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
-        /* NEW: This makes the photo a circle */
+        .profile-header h1 { 
+            font-size: 3.5rem; 
+            margin: 0; 
+            letter-spacing: -1px; 
+            color: #ffffff !important;
+        }
+
         .profile-pic {
-            width: 90px;
-            height: 90px;
+            width: 85px;
+            height: 85px;
             border-radius: 50%;
             border: 3px solid white;
             object-fit: cover;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         
-        /* About Bio Styling */
         #about-content {
-            display: none; /* Hidden by default */
+            display: none; 
             max-width: 600px;
             animation: fadeIn 0.5s;
         }
@@ -103,7 +110,7 @@
 
         .container { max-width: 1000px; margin: 80px auto; padding: 20px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-       .card {
+        .card {
             background: rgba(255, 255, 255, 0.9); 
             backdrop-filter: blur(8px);
             padding: 30px;
@@ -111,15 +118,15 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            text-decoration: none; /* Removes underline from text */
-            color: inherit; /* Keeps text color the same */
-            display: block; /* Makes the whole card clickable */
+            text-decoration: none;
+            color: inherit;
+            display: block;
             cursor: pointer;
         }
 
         .card:hover { 
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 1); /* Brightens on hover */
+            background: rgba(255, 255, 255, 1);
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
         }
 
@@ -131,24 +138,16 @@
     <nav>
        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Pabitra.</a></div>
         <ul>
-            <!-- The Switch -->
             <li><a href="about.html">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-<header id="hero-section">
-    <div id="main-heading">
-        <div class="profile-header">
-            <img src="image_6.png" alt="Pabitra" class="profile-pic">
-            <h1>Pabitra</h1>
-        </div>
-        <p>I build experiences on the web.</p>
-    </div>
-</header>
+    <header id="hero-section">
+        <!-- Main Heading wrapped in the new black container -->
+        <div id="main-heading">
             <div class="profile-header">
-                <!-- Using your photo file image_6.png -->
                 <img src="image_6.png" alt="Pabitra" class="profile-pic">
                 <h1>Pabitra</h1>
             </div>
@@ -157,33 +156,27 @@
 
         <!-- Hidden About Section -->
         <div id="about-content">
-            <!-- (Keep the rest of your hidden about section as it is) -->
-
-        <!-- Hidden About Section -->
-        <div id="about-content">
             <h2>About Me</h2>
             <p>Hello! I'm Pabitra. I am a passionate developer who loves creating clean and functional websites. I enjoy solving complex problems and learning new technologies to build better digital experiences.</p>
             <button class="back-btn" onclick="toggleAbout(false)">Back to Home</button>
         </div>
     </header>
-<!--my work -->
+
     <div class="container" id="projects">
         <h2 style="text-align: center; margin-bottom: 50px; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">My Works</h2>
         <div class="grid">
             
-            <!-- Project 1 Link -->
             <a href="https://github.com/pabitra1956/myportfolio.1" class="card">
                 <h3>Portfolio Website</h3>
                 <p>A responsive portfolio featuring interactive elements and GitHub Pages hosting.</p>
                 <span style="color: var(--primary); font-weight: bold;">Open Project →</span>
             </a>
 
-           <!-- Project Gallery Link -->
-<a href="projects.html" class="card">
-    <h3>View All Projects</h3>
-    <p>Click here to see a horizontal list of my 8 major projects.</p>
-    <span style="color: var(--primary); font-weight: bold;">Explore Gallery →</span>
-</a>
+            <a href="projects.html" class="card">
+                <h3>View All Projects</h3>
+                <p>Click here to see a horizontal list of my 8 major projects.</p>
+                <span style="color: var(--primary); font-weight: bold;">Explore Gallery →</span>
+            </a>
 
         </div>
     </div>
@@ -198,7 +191,6 @@
         <p style="margin-top: 30px; opacity: 0.6;">&copy; 2026 Pabitra.</p>
     </footer>
 
-    <!-- The Switch Logic -->
     <script>
         function toggleAbout(showAbout) {
             const mainHeading = document.getElementById('main-heading');
