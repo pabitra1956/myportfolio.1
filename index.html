@@ -55,14 +55,13 @@
             transition: all 0.5s ease;
         }
 
-        /* UPDATED: Black background pill for photo and name */
+        /* UPDATED: Removed image styles and centered text in the black pill */
         .profile-header {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
             background-color: #000000; /* Solid Black */
-            padding: 15px 35px;
+            padding: 10px 45px; /* Wider padding for a sleek look */
             border-radius: 60px;
             margin-bottom: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
@@ -73,15 +72,6 @@
             margin: 0; 
             letter-spacing: -1px; 
             color: #ffffff !important;
-        }
-
-        .profile-pic {
-            width: 85px;
-            height: 85px;
-            border-radius: 50%;
-            border: 3px solid white;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         
         #about-content {
@@ -129,8 +119,6 @@
             background: rgba(255, 255, 255, 1);
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
         }
-
-        footer { background: rgba(15, 23, 42, 0.95); color: white; text-align: center; padding: 60px 0; margin-top: 80px; }
     </style>
 </head>
 <body>
@@ -145,16 +133,14 @@
     </nav>
 
     <header id="hero-section">
-        <!-- Main Heading wrapped in the new black container -->
         <div id="main-heading">
+            <!-- Removed the <img> tag here -->
             <div class="profile-header">
-                <img src="image_6.png" alt="Pabitra" class="profile-pic">
                 <h1>Pabitra</h1>
             </div>
             <p>I build experiences on the web.</p>
         </div>
 
-        <!-- Hidden About Section -->
         <div id="about-content">
             <h2>About Me</h2>
             <p>Hello! I'm Pabitra. I am a passionate developer who loves creating clean and functional websites. I enjoy solving complex problems and learning new technologies to build better digital experiences.</p>
@@ -180,8 +166,6 @@
 
         </div>
     </div>
-
-    
 
     <script>
         function toggleAbout(showAbout) {
